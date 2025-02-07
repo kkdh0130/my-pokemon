@@ -2,6 +2,7 @@
   "name": "my-pokemon",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://kkdh0130.github.io/my-pokemon",
   "dependencies": {
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
