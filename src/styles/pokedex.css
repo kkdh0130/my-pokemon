@@ -1,0 +1,84 @@
+
+ul {
+  margin-bottom: 0;
+}
+
+/* Pokedex */
+.pokemon-card{
+  margin: 15px;
+}
+
+.pokemon-card-title, .pokemon-card-num {
+  font-family: 'DungGeunMo', sans-serif; 
+  font-size: 1.25rem;
+  color: #333; 
+}
+
+.top-button {
+  position: fixed;
+  bottom: 120px;
+  right: 20px;
+  background-color: #ffcb05;
+  border: none;
+  color: black;
+  font-size: 24px;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.top-button.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.top-button.hide {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+.top-button:hover {
+  background-color: #f7b500;
+}
+
+.list-inline-item a {
+  color: #ffcb05;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.list-inline-item a:hover {
+  text-decoration: underline;
+}
+
+/* PokeMonDetails */
+.icon-img {
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.pokemon-img {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+}
+
+.bx-content {
+  padding: 15px 50px;
+}
+
+.pokemon-list-button {
+  background-color: hsla(0, 0%, 93%, 0.162);
+  padding: 10px 15px;
+  margin-top: 10vh;
+}
+
+.pokemon-list-button a {
+  text-decoration: none;
+  color: inherit;
+}
