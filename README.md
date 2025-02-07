@@ -1,1 +1,1 @@
-# 🏆 MY POKEMON - 포켓몬 도감
+🏆 MY POKEMON - 포켓몬 도감
