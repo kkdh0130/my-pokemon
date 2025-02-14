@@ -22,8 +22,9 @@ React와 Pokémon API를 활용하여 **Pokémon 도감**을 구현한 프로젝
 git clone https://github.com/사용자명/pokedex.git
 cd pokedex
 npm install
+```
 
-## 🏆 출처 및 라이브러리
+## 🌐 출처 및 라이브러리
 Pokémon API: PokeAPI
 React: https://react.dev/
 React Query: https://tanstack.com/query/latest
