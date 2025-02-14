@@ -2,6 +2,8 @@
 
 React와 Pokémon API를 활용하여 **Pokémon 도감**을 구현한 프로젝트입니다.
 
+📌 https://kkdh0130.github.io/my-pokemon/
+
 ## 🌟 주요 기능
 ✅ **포켓몬 도감 조회** - Pokémon API에서 데이터를 불러와 렌더링  
 ✅ **무한 스크롤** - Intersection Observer와 React Query를 활용한 무한 로딩  
