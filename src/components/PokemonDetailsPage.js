@@ -10,13 +10,17 @@ const PokemonDetailsPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // 포켓몬 기본 정보 가져오기
         const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+        // 포켓몬 종 정보 가져오기
         const speciesResponse = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
 
+        // 포켓몬 한글 이름 찾기
         const koreanName =
           speciesResponse.data.names.find((name) => name.language.name === "ko")?.name ??
-          "알 수 없음";
+          "이름 없음";
 
+        // 포켓몬 타입 한글 이름 추가
         const typesWithKoreanNames = await Promise.all(
           response.data.types.map(async (type) => {
             const typeResponse = await axios.get(type.type.url);
@@ -27,18 +31,9 @@ const PokemonDetailsPage = () => {
           }),
         );
 
-        const abilitiesWithKoreanNames = await Promise.all(
-          response.data.abilities.map(async (ability) => {
-            const abilityResponse = await axios.get(ability.ability.url);
-            const koreanAbilityName =
-              abilityResponse.data.names.find((name) => name.language.name === "ko")?.name ??
-              ability.ability.name;
-            return { ...ability, ability: { ...ability.ability, korean_name: koreanAbilityName } };
-          }),
-        );
-
+        // 포켓몬 기술 한글 이름 추가 (최대 4개)
         const movesWithKoreanNames = await Promise.all(
-          response.data.moves.slice(0, 5).map(async (move) => {
+          response.data.moves.slice(0, 4).map(async (move) => {
             const moveResponse = await axios.get(move.move.url);
             const koreanMoveName =
               moveResponse.data.names.find((name) => name.language.name === "ko")?.name ??
@@ -51,7 +46,6 @@ const PokemonDetailsPage = () => {
           ...response.data,
           korean_name: koreanName,
           types: typesWithKoreanNames,
-          abilities: abilitiesWithKoreanNames,
           moves: movesWithKoreanNames,
         });
       } catch (error) {
@@ -65,11 +59,14 @@ const PokemonDetailsPage = () => {
   return (
     <div className="pokemon-details-page">
       <div className="pokemon-details-container">
-        {pokemonData ? <PokemonDetails pokemon={pokemonData} /> : <p>몬스터볼에서 포켓몬을 꺼내오는 중...</p>}
+        {pokemonData ? (
+          <PokemonDetails pokemon={pokemonData} />
+        ) : (
+          <p className="p-4">몬스터볼에서 포켓몬을 꺼내오는 중...</p>
+        )}
       </div>
     </div>
   );
 };
-
 
 export default PokemonDetailsPage;
