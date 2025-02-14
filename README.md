@@ -25,7 +25,7 @@ npm install
 ```
 
 ## 🌐 출처 및 라이브러리
-Pokémon API: PokeAPI
-React: https://react.dev/
-React Query: https://tanstack.com/query/latest
-Bootstrap: https://getbootstrap.com/
+- Pokémon API: PokeAPI
+- React: https://react.dev/
+- React Query: https://tanstack.com/query/latest
+- Bootstrap: https://getbootstrap.com/
